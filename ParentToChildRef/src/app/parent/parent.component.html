@@ -1,0 +1,6 @@
+
+<p>Parent Message: {{parentMessage2}}</p>
+
+<app-child [message]="parentMessage"
+            (messageEvent)="receivedMsg($event)"></app-child>
+<p>Child to Parent: {{parentMessage3}}</p>
