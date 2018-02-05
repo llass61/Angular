@@ -12,6 +12,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
   parentMessage: string = "message from parent";
   parentMessage2: string = "message from parent";
   parentMessage3: string;
+  twoWayMsg: string = "Default";
 
   @ViewChild(ChildComponent) child;
 
