@@ -4,3 +4,5 @@
 <app-child [message]="parentMessage"
             (messageEvent)="receivedMsg($event)"></app-child>
 <p>Child to Parent: {{parentMessage3}}</p>
+<app-two-way [(twoWay)]="twoWayMsg"></app-two-way>
+<p>Two-way msg: {{twoWayMsg}}</p>
