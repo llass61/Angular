@@ -1,0 +1,13 @@
+
+<ul>
+  <div *ngFor="let navDef of navDefList">
+      <li *ngIf="isAllowed(navDef.id)" (click)="toggleSubMenu(navDef)">{{navDef.name}}
+
+        <ul *ngIf="showSubMenu(navDef)">
+          <div *ngFor="let subMenu of navDef.sub">
+            <li *ngIf="isAllowed(subMenu.id)">{{subMenu.name}}</li>
+          </div>
+        </ul>
+      </li>
+  </div>
+</ul>
