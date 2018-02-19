@@ -1,0 +1,13 @@
+<mat-input-container>
+  <input
+    ngModel
+    #username="ngModel"
+    name="username"
+    matInput placeholder="Favorite Food"
+    required>
+  <mat-hint>type a unique food</mat-hint>
+  <span matSuffix>@domain.com</span>
+  <mat-error *ngIf="username.invalid && username.errors">
+    Ugh!
+  </mat-error>
+</mat-input-container>
