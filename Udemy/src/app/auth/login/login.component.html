@@ -1,0 +1,21 @@
+
+<div>
+
+  <form #f="ngForm" fxLayout="column" fxLayoutGap="10px"
+      fxLayoutAlign="center center" (ngSubmit)="onSubmit()">
+
+    <mat-form-field >
+
+      <input matInput 
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        ngModel 
+        #emailForm="ngModel">
+        <mat-error>Email is required</mat-error>
+    </mat-form-field>
+
+  </form>
+
+</div>
