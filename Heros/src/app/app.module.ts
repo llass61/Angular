@@ -11,7 +11,6 @@ import { HeroService } from './hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { InMemoryDbService, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 
 @NgModule({
@@ -26,8 +25,7 @@ import { InMemoryDbService, InMemoryWebApiModule } from 'angular-in-memory-web-a
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClient,
-    InMemoryWebApiModule
+    HttpClient
   ],
   providers: [HeroService,MessageService],
   bootstrap: [AppComponent]
