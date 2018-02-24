@@ -2,7 +2,7 @@
 <div>
 
   <form #f="ngForm" fxLayout="column" fxLayoutGap="10px"
-      fxLayoutAlign="center center" (ngSubmit)="onSubmit()">
+      fxLayoutAlign="center center" (ngSubmit)="onSubmit(f)">
 
     <mat-form-field >
 
@@ -16,6 +16,22 @@
         <mat-error>Email is required</mat-error>
     </mat-form-field>
 
+    <mat-form-field >
+
+      <input matInput 
+        type="password"
+        name="password"
+        placeholder="Your Password"
+        required
+        ngModel 
+        #pwForm="ngModel">
+        <mat-hint align="end">{{pwForm?.value.length}} / 6</mat-hint>
+        <mat-error>Password is required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button 
+            [disabled]="f.invalid"
+            color="primary">Submit</button>
   </form>
 
 </div>

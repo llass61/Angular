@@ -1,8 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
 
   <!-- <app-buttons></app-buttons> -->
 
-  <router-outlet></router-outlet>
+  <mat-sidenav-container>
+    <mat-sidenav #sn [opened]="true">
+      
+      <app-sidenav-list (click)="onClose()"></app-sidenav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+      
+      <app-header (sidenavToggle)="sn.toggle()"></app-header>
+      <main>
+          <router-outlet></router-outlet>
+      </main>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
 
