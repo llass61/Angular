@@ -1,0 +1,12 @@
+<p>
+  Assignment #3
+</p>
+
+<button (click)="onToggle()">Display Details</button>
+
+<p *ngIf="displayPw">Secret Password = tuna</p>
+<ul>
+  <li *ngFor="let logItem of toggleAttempts; let idx = index"
+      [ngStyle]="{backgroundColor: idx >= 5 ? 'blue' : 'transparent'}"
+      [ngClass]="{'white-text': idx >=5}">{{logItem}}</li>
+</ul>

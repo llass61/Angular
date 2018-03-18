@@ -1,0 +1,30 @@
+h3 {
+    color: darkblue;
+}
+
+.size1 {
+    margin: 20px;
+    background-color: red;
+}
+
+.size2 {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+}
+
+.size3 {
+    margin: 10px;
+    width: 70px;
+    height: 40px;
+    background-color: yellowgreen;
+}
+
+.size4 {
+    margin: 10px;
+    width: 60px;
+    height: 30px;
+    background-color: yellowgreen;
+}
+

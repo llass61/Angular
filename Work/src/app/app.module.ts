@@ -8,23 +8,22 @@ import { Route, Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MyServiceService } from './my-service.service';
-import { Test1Component } from './test1/test1.component';
 import { ParentComponent } from './parent/parent.component';
-import { TestObservablesComponent } from './test-observables/test-observables.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const appRoutes: Routes = [
   { path: '', component: ParentComponent },
   { path: 'parent', component: ParentComponent },
-  { path: 'test1', component: Test1Component },
-  { path: 'observables', component: TestObservablesComponent }
+  { path: 'subjects', component: SubjectsComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    Test1Component,
     ParentComponent,
-    TestObservablesComponent
+    SubjectsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

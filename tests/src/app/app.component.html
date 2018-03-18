@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-    <p>
-      <span class="badge">{{ title }}</span>
-    </p>
-  </h1>
-</div>
+
+<button (click)="clicked()">Click Me!</button>
+<span>{{message}}</span>
+
+<br>
+
+<button (click)="onGetForm()">New Form</button>
+<div>{{frm.doc}}</div>
+<div>{{frm.acct}}</div>
+<div>{{frm.form}}</div>
