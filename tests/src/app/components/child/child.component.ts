@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestingService, Form } from '../../services/testing.service';
 
 @Component({
   selector: 'app-child',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
+  form: Form;
+
+  constructor(private service: TestingService) { }
 
   ngOnInit() {
+    this.service.mydata.subscribe( data => this.form = data );
   }
 
 }

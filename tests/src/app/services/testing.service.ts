@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class TestingService {
 
   private file: string = "../../assets/forms.json";
-  idx: number = 0;
+  private idx: number = 0;
   private forms: Form[];
   mydata: BehaviorSubject<Form> = new BehaviorSubject(null);
 
