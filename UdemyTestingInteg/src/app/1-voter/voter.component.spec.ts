@@ -1,4 +1,5 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { VoterComponent } from './voter.component';
 import { Component } from '@angular/core';
@@ -17,6 +18,24 @@ let fixture: ComponentFixture<VoterComponent>;
     fixture.nativeElement
   });
 
-  it('', () => {
+  it('it should render total votes', () => {
+    component.othersVote = 20;
+    component.myVote = 1;
+    
+    let button = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
+
+    button.triggerEventHandler('click',null);
+    fixture.detectChanges();
+
+    expect(component.totalVotes).toBe(21);
+  });
+
+  it('should increase total votes when I click the upvote', () => {
+    let button = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
+
+    button.triggerEventHandler('click',null);
+    fixture.detectChanges();
+
+    expect(component.totalVotes).toBe(1);
   });
 });
