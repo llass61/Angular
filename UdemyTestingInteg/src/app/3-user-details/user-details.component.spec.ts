@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 import { UserDetailsComponent } from './user-details.component';
 
@@ -12,7 +12,19 @@ class RouterStub {
   }
 }
 class AcivatedRouteStub {
-  params: Observable<any> = Observable.empty();
+  private subject = new Subject();
+
+  push(value) 
+  {
+    this.subject.next(value);
+  }
+
+  // params: Observable<any> = Observable.empty();
+
+  get params() 
+  {
+    return this.subject.asObservable();
+  }
 }
 
 describe('UserDetailsComponent', () => {
@@ -36,7 +48,22 @@ describe('UserDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should redirect user to users page after saving', () => {
+    let router = TestBed.get(Router);
+    let spy = spyOn(router, 'navigate');
+
+    component.save();
+
+    expect(spy).toHaveBeenCalledWith(['users']);
+  });
+
+  it('should navigate the user to not found page when passing invalid id', () => {
+    let router = TestBed.get(Router);
+    let spy = spyOn(router, 'navigate');
+
+    let route:AcivatedRouteStub = TestBed.get(ActivatedRoute);
+    route.push({id: 0});
+
+    expect(spy).toHaveBeenCalledWith(['not-found']);
   });
 });
